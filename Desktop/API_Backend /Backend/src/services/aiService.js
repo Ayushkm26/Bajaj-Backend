@@ -3,8 +3,7 @@ const { GEMINI_API_KEY } = require("../config/envConfig");
 
 exports.askAI = async (question) => {
   try {
-    // Note: 'gemini-flash-latest' is the most stable alias in 2026 
-    // to avoid 404s from retired versions.
+   
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
 
     const response = await axios.post(
@@ -18,7 +17,7 @@ exports.askAI = async (question) => {
       },
       {
         headers: {
-          "Content-Type": "application/json" 
+          "Content-Type": "application/json"
         }
       }
     );
